@@ -46,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Product Screenshot](./projectscreenshot.png)
+![Product Screenshot](./projectScreenshot.png)
 
 
 ## App deployed on Heroku:
