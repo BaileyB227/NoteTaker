@@ -1,11 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/BaileyB227/NoteTaker">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Note Taker Using Expres.js</h3>
+  <h3 align="center">Note Taker Using Express.js</h3>
 
   <p align="center">
     Allowes you to save notes as well as delete them
