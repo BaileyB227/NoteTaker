@@ -3,13 +3,14 @@ const path = require('path')
 const app = express();
 const fs = require('fs')
 const PORT = process.env.PORT || 3001;
+const prevNotes = require('./db/db.json');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
-  res.json(allNotes.slice(1));
+  res.json(prevNotes.slice(1));
 });
 
 app.get('/', (req, res) => {
@@ -44,7 +45,7 @@ function createNewNote(body, notesArray) {
 }
 
 app.post('/api/notes', (req, res) => {
-  const newNote = createNewNote(req.body, allNotes);
+  const newNote = createNewNote(req.body, prevNotes);
   res.json(newNote);
 });
 
@@ -65,10 +66,10 @@ function deleteNote(id, notesArray) {
 }
 
 app.delete('/api/notes/:id', (req, res) => {
-  deleteNote(req.params.id, allNotes);
+  deleteNote(req.params.id, prevNotes);
   res.json(true);
 });
 
 app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}!`);
+  console.log(`API server now on port ${PORT}!`);
 });
